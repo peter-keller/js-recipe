@@ -1,0 +1,169 @@
+@import url("https://rsms.me/inter/inter.css");
+
+@import "./variables";
+@import "./mixins";
+
+html {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  margin: 0 10%;
+  height: 100%;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 0px;
+  }
+}
+
+.navbar {
+  background: $color-main-blue;
+  height: 52px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+
+  @include tablet {
+    padding: 0 145px;
+    height: 72px;
+  }
+
+  &__brand {
+    width: fit-content;
+  }
+}
+
+.ingredient-list {
+  grid-area: 1 / 2 / 4 / 3;
+
+  @include blue-container;
+
+  &__title {
+    @include title($color-white);
+  }
+
+  &__list {
+    margin: 16px 0;
+
+    @include tablet {
+      margin: 30px 0;
+    }
+  }
+}
+
+.ingredient-item {
+  margin-bottom: 14px;
+
+  &__quantity {
+    font-size: 16px;
+    line-height: 19px;
+    color: $color-white;
+  }
+
+  &__name {
+    color: $color-white;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+}
+
+.serving-calculator {
+  @include blue-container;
+
+  grid-area: 1 / 1 / 2 / 2;
+
+  &__title {
+    @include title($color-white);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    background: #f7f7f7;
+    border-radius: 6px;
+    border: none;
+    padding: 10px 15px;
+    margin: 37px 0;
+
+    @include tablet {
+      width: fit-content;
+    }
+  }
+}
+
+.instructions-list {
+  margin: 14px 0;
+  grid-area: 2 / 1 / 4 / 2;
+
+  @include tablet {
+    margin: 40px 15%;
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__list {
+    margin: 18px 0;
+
+    @include tablet {
+      margin: 40px 0;
+    }
+  }
+}
+
+.instruction-step {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: $color-black;
+}
+
+.btn {
+  padding: 11px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  @include tablet {
+    width: fit-content;
+  }
+
+  &__primary {
+    background-color: transparent;
+    border: 1px solid $color-white;
+    color: $color-white;
+  }
+}
