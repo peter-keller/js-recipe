@@ -9,7 +9,7 @@ export default class ServingCalculator extends StoreComponent {
     });
   }
 
-  get servings() {
+  get defaultServings() {
     return parseInt(store.state.currentRecipe.servings);
   }
 

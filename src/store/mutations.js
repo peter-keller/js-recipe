@@ -16,4 +16,10 @@ export default {
 
     return state;
   },
+
+  SET_RECIPE_INDEX(state, payload) {
+    state.currentRecipeIndex = payload;
+
+    return state;
+  },
 };

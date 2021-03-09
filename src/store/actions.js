@@ -20,12 +20,18 @@ export default {
     }
   },
 
-  setActiveRecipe(context, id) {
+  setActiveRecipe(context) {
+    const id = context.state.currentRecipeIndex;
     const recipe = context.state.recipes[id];
+
     context.commit("SET_ACTIVE_RECIPE", recipe);
   },
 
   setServingSize(context, size) {
     context.commit("SET_SERVING_SIZE", size);
+  },
+
+  setRecipeIndex(context, index) {
+    context.commit("SET_RECIPE_INDEX", index);
   },
 };

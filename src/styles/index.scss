@@ -1,11 +1,11 @@
 @import url("https://rsms.me/inter/inter.css");
-
 @import "./variables";
 @import "./mixins";
 
 html {
   font-family: "Inter", sans-serif;
 }
+
 @supports (font-variation-settings: normal) {
   html {
     font-family: "Inter var", sans-serif;
@@ -41,7 +41,6 @@ li {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 30px;
-    grid-row-gap: 0px;
   }
 }
 

@@ -5,6 +5,7 @@ import store from "./store/index.js";
 import IngredientList from "~/containers/ingredient-list";
 import ServingCalculator from "~/components/serving-calculator";
 import InstructionsList from "~/containers/instructions-list";
+import RecipeNavigation from "~/containers/recipe-navigation";
 
 if (process.env.NODE_ENV === "development") {
   require("./index.html");
@@ -15,10 +16,7 @@ if (process.env.NODE_ENV === "development") {
   await store.dispatch("fetchRecipes");
 })();
 
-const ingredientListInstance = new IngredientList();
-const servingCalculatorInstance = new ServingCalculator();
-const instructionsListInstance = new InstructionsList();
-
-ingredientListInstance.render();
-servingCalculatorInstance.render();
-instructionsListInstance.render();
+new IngredientList();
+new ServingCalculator();
+new InstructionsList();
+new RecipeNavigation();
